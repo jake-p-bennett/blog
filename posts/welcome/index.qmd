@@ -1,11 +1,11 @@
 ---
 title: "Welcome To My Blog"
-author: "Tristan O'Malley"
-date: "2025-09-30"
+author: "Jake Bennett"
+date: "2025-10-3"
 categories: [news]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+Here is my first blog to test things out.
 
 ![](thumbnail.jpg)
 
