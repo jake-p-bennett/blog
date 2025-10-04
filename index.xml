@@ -54,5 +54,33 @@
   <guid>https://jake-p-bennett.github.io/blog/posts/welcome/</guid>
   <pubDate>Fri, 03 Oct 2025 07:00:00 GMT</pubDate>
 </item>
+<item>
+  <title>Evaluating a Betting Stragey Based on The Athletic’s Projections</title>
+  <dc:creator>Jake Bennett</dc:creator>
+  <link>https://jake-p-bennett.github.io/blog/posts/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>During the 2024-2025 NFL season, The Athletic maintained an NFL projections webpage [INSERT LINK HERE] that contained forecasts for each regular season and playoff game. Each projection included a forecasted points spread, and I was curious to see how these forecasts compared to the Las Vegas spreads and the actual game outcomes. I back-tested a simple betting strategy:</p>
+<ol type="1">
+<li><p>When The Athletic’s spread is greater than the Vegas spread, bet on the favorite.</p></li>
+<li><p>When The Athletic’s spread is less than the Vegas spread, bet on the underdog.</p></li>
+<li><p>If the spreads are the same, do not place a bet.</p></li>
+<li><div>
+<h2 id="section" class="anchored"></h2>
+</div></li>
+</ol>
+
+
+
+ ]]></description>
+  <category>NFL</category>
+  <category>sports</category>
+  <guid>https://jake-p-bennett.github.io/blog/posts/</guid>
+  <pubDate>Sat, 04 Oct 2025 02:03:43 GMT</pubDate>
+</item>
 </channel>
 </rss>

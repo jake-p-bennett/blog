@@ -21,10 +21,17 @@
     "text": "This is a post with executable code."
   },
   {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Evaluating a Betting Stragey Based on The Athletic’s Projections",
+    "section": "",
+    "text": "During the 2024-2025 NFL season, The Athletic maintained an NFL projections webpage [INSERT LINK HERE] that contained forecasts for each regular season and playoff game. Each projection included a forecasted points spread, and I was curious to see how these forecasts compared to the Las Vegas spreads and the actual game outcomes. I back-tested a simple betting strategy:\n\nWhen The Athletic’s spread is greater than the Vegas spread, bet on the favorite.\nWhen The Athletic’s spread is less than the Vegas spread, bet on the underdog.\nIf the spreads are the same, do not place a bet."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "blog",
     "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 3, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 3, 2025\n\n\nJake Bennett\n\n\n\n\n\nNo matching items"
+    "text": "Evaluating a Betting Stragey Based on The Athletic’s Projections\n\n\n\nNFL\n\nsports\n\n\n\n\n\n\n\n\n\nJake Bennett\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 3, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 3, 2025\n\n\nJake Bennett\n\n\n\n\n\nNo matching items"
   }
 ]
