@@ -69,10 +69,15 @@
 <li><p>When The Athletic’s spread is greater than the Vegas spread, bet on the favorite.</p></li>
 <li><p>When The Athletic’s spread is less than the Vegas spread, bet on the underdog.</p></li>
 <li><p>If the spreads are the same, do not place a bet.</p></li>
-<li><div>
-<h2 id="section" class="anchored"></h2>
-</div></li>
 </ol>
+<p>The strategy only makes spread bets (i.e., no moneyline bets), and assumes -110 odds (wagering $110 to win $100).</p>
+<p>Of the 285 NFL games in the 2024-2025 season (regular season and playoffs), there were 238 games where The Athletic’s spread did not match the Vegas spread. On average, The Athletic’s spread differed from the actual game out come by 9.75 points, while Vegas’ spread differed by 9.66 points. The median differences for The Athletic and Vegas were 7.5 points and 7 points, respectively. These are minimal differences, to be sure, but the Vegas lines were more accurate for the 2024-2025 season.</p>
+<p>Unfortunately, the betting strategy described above does not give us an edge. Assuming bets of $110, employing the strategy would have lost $1,460 for a return of -5.58%. In fact, using the complete opposite strategy would have lost $830 for a return of -3.17%, which is less than the -4.55% we would expect from winning half of our bets. [Insert thing about confidence interval here]</p>
+<p>Then I wondered if The Athletic’s spread forecasts were better for a particular direction. That is to say, what if we bet only on games where The Athletic had the favorite favored by more? What if we bet only on games where The Athletic had the favorite favored by less?</p>
+<p>It turns out that betting only on games where The Athletic had the favorite favored by more than Vegas would have been profitable to varying degrees, depending on what threshold of spread difference is used.</p>
+<p><img src="https://jake-p-bennett.github.io/blog/posts/images/clipboard-1410853896.png" class="img-fluid"></p>
+<p>The same cannot be said for games where The Athletic has the favorite favored by less:</p>
+<p><img src="https://jake-p-bennett.github.io/blog/posts/images/clipboard-1410853896.png" class="img-fluid"></p>
 
 
 
@@ -80,7 +85,7 @@
   <category>NFL</category>
   <category>sports</category>
   <guid>https://jake-p-bennett.github.io/blog/posts/</guid>
-  <pubDate>Sat, 04 Oct 2025 02:06:37 GMT</pubDate>
+  <pubDate>Sat, 04 Oct 2025 22:09:12 GMT</pubDate>
 </item>
 </channel>
 </rss>
