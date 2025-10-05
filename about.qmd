@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: profile.jpg
+image: DarkRook.webp
 about:
   template: jolla
   # links:
