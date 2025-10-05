@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>nfl-notebook – blog</title>
+<title>nfl-notebook – Jake's Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">blog</span>
+    <span class="navbar-title">Jake’s Blog</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -132,12 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://github.com/jake-p-bennett"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -159,14 +154,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="28b8bdbc" class="cell" data-execution_count="14">
+<div id="28b8bdbc" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="61ae2d04" class="cell" data-execution_count="15">
+<div id="61ae2d04" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up some dictionaries etc.</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>team_name_to_id <span class="op">=</span> {<span class="st">'Cardinals'</span>: <span class="st">'ARI'</span>, <span class="st">'Falcons'</span>: <span class="st">'ATL'</span>, <span class="st">'Colts'</span>: <span class="st">'IND'</span>, <span class="st">'Ravens'</span>: <span class="st">'BAL'</span>, <span class="st">'Patriots'</span>: <span class="st">'NE'</span>, <span class="st">'Bills'</span>: <span class="st">'BUF'</span>, <span class="st">'Panthers'</span>: <span class="st">'CAR'</span>, <span class="st">'Bears'</span>: <span class="st">'CHI'</span>, <span class="st">'Bengals'</span>: <span class="st">'CIN'</span>, <span class="st">'Browns'</span>: <span class="st">'CLE'</span>, <span class="st">'Cowboys'</span>: <span class="st">'DAL'</span>, <span class="st">'Broncos'</span>: <span class="st">'DEN'</span>, <span class="st">'Lions'</span>: <span class="st">'DET'</span>, <span class="st">'Packers'</span>: <span class="st">'GB'</span>, <span class="st">'Oilers'</span>: <span class="st">'TEN'</span>, <span class="st">'Texans'</span>: <span class="st">'HOU'</span>, <span class="st">'Jaguars'</span>: <span class="st">'JAX'</span>, <span class="st">'Chiefs'</span>: <span class="st">'KC'</span>, <span class="st">'Raiders'</span>: <span class="st">'LVR'</span>, <span class="st">'Chargers'</span>: <span class="st">'LAC'</span>, <span class="st">'Rams'</span>: <span class="st">'LAR'</span>, <span class="st">'Dolphins'</span>: <span class="st">'MIA'</span>, <span class="st">'Vikings'</span>: <span class="st">'MIN'</span>, <span class="st">'Saints'</span>: <span class="st">'NO'</span>, <span class="st">'Giants'</span>: <span class="st">'NYG'</span>, <span class="st">'Jets'</span>: <span class="st">'NYJ'</span>, <span class="st">'Eagles'</span>: <span class="st">'PHI'</span>, <span class="st">'Steelers'</span>: <span class="st">'PIT'</span>, <span class="st">'49ers'</span>: <span class="st">'SF'</span>, <span class="st">'Seahawks'</span>: <span class="st">'SEA'</span>, <span class="st">'Buccaneers'</span>: <span class="st">'TB'</span>, <span class="st">'Titans'</span>: <span class="st">'TEN'</span>, <span class="st">'Commanders'</span>: <span class="st">'WAS'</span>}</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>long_team_name_to_id <span class="op">=</span> {<span class="st">'Arizona Cardinals'</span>: <span class="st">'ARI'</span>, <span class="st">'Atlanta Falcons'</span>: <span class="st">'ATL'</span>, <span class="st">'Baltimore Colts'</span>: <span class="st">'IND'</span>, <span class="st">'Baltimore Ravens'</span>: <span class="st">'BAL'</span>, <span class="st">'Boston Patriots'</span>: <span class="st">'NE'</span>, <span class="st">'Buffalo Bills'</span>: <span class="st">'BUF'</span>, <span class="st">'Carolina Panthers'</span>: <span class="st">'CAR'</span>, <span class="st">'Chicago Bears'</span>: <span class="st">'CHI'</span>, <span class="st">'Cincinnati Bengals'</span>: <span class="st">'CIN'</span>, <span class="st">'Cleveland Browns'</span>: <span class="st">'CLE'</span>, <span class="st">'Dallas Cowboys'</span>: <span class="st">'DAL'</span>, <span class="st">'Denver Broncos'</span>: <span class="st">'DEN'</span>, <span class="st">'Detroit Lions'</span>: <span class="st">'DET'</span>, <span class="st">'Green Bay Packers'</span>: <span class="st">'GB'</span>, <span class="st">'Houston Oilers'</span>: <span class="st">'TEN'</span>, <span class="st">'Houston Texans'</span>: <span class="st">'HOU'</span>, <span class="st">'Indianapolis Colts'</span>: <span class="st">'IND'</span>, <span class="st">'Jacksonville Jaguars'</span>: <span class="st">'JAX'</span>, <span class="st">'Kansas City Chiefs'</span>: <span class="st">'KC'</span>, <span class="st">'Las Vegas Raiders'</span>: <span class="st">'LVR'</span>, <span class="st">'Los Angeles Chargers'</span>: <span class="st">'LAC'</span>, <span class="st">'Los Angeles Raiders'</span>: <span class="st">'LVR'</span>, <span class="st">'Los Angeles Rams'</span>: <span class="st">'LAR'</span>, <span class="st">'Miami Dolphins'</span>: <span class="st">'MIA'</span>, <span class="st">'Minnesota Vikings'</span>: <span class="st">'MIN'</span>, <span class="st">'New England Patriots'</span>: <span class="st">'NE'</span>, <span class="st">'New Orleans Saints'</span>: <span class="st">'NO'</span>, <span class="st">'New York Giants'</span>: <span class="st">'NYG'</span>, <span class="st">'New York Jets'</span>: <span class="st">'NYJ'</span>, <span class="st">'Oakland Raiders'</span>: <span class="st">'LVR'</span>, <span class="st">'Philadelphia Eagles'</span>: <span class="st">'PHI'</span>, <span class="st">'Phoenix Cardinals'</span>: <span class="st">'ARI'</span>, <span class="st">'Pittsburgh Steelers'</span>: <span class="st">'PIT'</span>, <span class="st">'San Diego Chargers'</span>: <span class="st">'LAC'</span>, <span class="st">'San Francisco 49ers'</span>: <span class="st">'SF'</span>, <span class="st">'Seattle Seahawks'</span>: <span class="st">'SEA'</span>, <span class="st">'St. Louis Cardinals'</span>: <span class="st">'ARI'</span>, <span class="st">'St. Louis Rams'</span>: <span class="st">'LAR'</span>, <span class="st">'Tampa Bay Buccaneers'</span>: <span class="st">'TB'</span>, <span class="st">'Tennessee Oilers'</span>: <span class="st">'TEN'</span>, <span class="st">'Tennessee Titans'</span>: <span class="st">'TEN'</span>, <span class="st">'Washington Commanders'</span>: <span class="st">'WAS'</span>, <span class="st">'Washington Football Team'</span>: <span class="st">'WAS'</span>, <span class="st">'Washington Redskins'</span>: <span class="st">'WAS'</span>}</span>
@@ -179,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">'Saints'</span>, <span class="st">'Panthers'</span>, <span class="st">'Falcons'</span>, <span class="st">'Buccaneers'</span>,</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">'49ers'</span>, <span class="st">'Rams'</span>, <span class="st">'Cardinals'</span>, <span class="st">'Seahawks'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="da865079" class="cell" data-execution_count="16">
+<div id="da865079" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up some functions</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Gather all win probs for a certain week</span></span>
@@ -236,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> line_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8fd4de51" class="cell" data-execution_count="17">
+<div id="8fd4de51" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in html data from The Athletic's Website</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>all_weeks <span class="op">=</span> {}</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -257,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> f:</span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        all_weeks[key] <span class="op">=</span> f.read()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="31d5469a" class="cell" data-execution_count="18">
+<div id="31d5469a" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Create dictionary of weekly line data ---</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>all_weeks_line_dict <span class="op">=</span> {week: lines_weekX(html) <span class="cf">for</span> week, html <span class="kw">in</span> all_weeks.items()}</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -292,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>        df.loc[df[<span class="st">'schedule_week'</span>] <span class="op">==</span> week_number, <span class="st">'team_favorite_id'</span>].<span class="bu">map</span>(week_data)</span>
 <span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="31c4fc6d" class="cell" data-execution_count="19">
+<div id="31c4fc6d" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill in calculated_line. The blanks currently represent games where the Vegas favorite differs from The Athletic favorite</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'calculated_line'</span>] <span class="op">=</span> df[<span class="st">'calculated_line'</span>].replace(<span class="st">""</span>,np.nan)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -307,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">str</span>[<span class="dv">1</span>:]</span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="62eded31" class="cell" data-execution_count="20">
+<div id="62eded31" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert pick-ems to 0</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">'calculated_line'</span>] <span class="op">==</span> <span class="st">'PK'</span>, <span class="st">'calculated_line'</span>] <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">'calculated_line'</span>] <span class="op">==</span> <span class="st">'K'</span>, <span class="st">'calculated_line'</span>] <span class="op">=</span> <span class="dv">0</span></span>
@@ -335,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Number of games with mismatched spread: 239</code></pre>
 </div>
 </div>
-<div id="3466dbc2" class="cell" data-execution_count="21">
+<div id="3466dbc2" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Determine if favorite is home or away</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"favorite_score"</span>] <span class="op">=</span> np.where(df[<span class="st">"team_favorite_id"</span>] <span class="op">==</span> df[<span class="st">"team_home_id"</span>],</span>
@@ -357,7 +352,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="60c693df" class="cell" data-execution_count="22">
+<div id="60c693df" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check out in total how far off the Vegas lines and The Athletic's lines were</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>avg_residual_athletic <span class="op">=</span> df[<span class="st">'modeled_v_actual_nyt'</span>].mean()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>avg_residual_vegas <span class="op">=</span> df[<span class="st">'modeled_v_actual_vegas'</span>].mean()</span>
@@ -381,7 +376,7 @@ The Athletic:  7.50
 Vegas:  7.00</code></pre>
 </div>
 </div>
-<div id="93655ebd" class="cell" data-execution_count="23">
+<div id="93655ebd" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Main function that calculates wins and losses. I added the "fade" argument after discovering that betting based on my initial idea was not a good strategy</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># My intial idea was to bet on the underdog in cases where The Athletic projected a smaller line than Vegas and to bet on the favorite in cases where The Athletic projected a bigger line than Vegas</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Flipping the "fade" argument to true flips those actions</span></span>
@@ -425,7 +420,7 @@ Vegas:  7.00</code></pre>
 <span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
 <span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1674a916" class="cell" data-execution_count="24">
+<div id="1674a916" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate and print ROI of a particular strategy</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_roi(df: pd.DataFrame, fade: <span class="bu">bool</span><span class="op">=</span><span class="va">False</span>, threshold: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.0</span>, mode: <span class="bu">str</span><span class="op">=</span><span class="st">"both"</span>):</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -449,7 +444,7 @@ Vegas:  7.00</code></pre>
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Total winnings/loss: </span><span class="sc">{</span>win_loss<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"ROI: </span><span class="sc">{</span>roi<span class="sc">:.2%}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f7f1367a" class="cell" data-execution_count="25">
+<div id="f7f1367a" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How well would the initial betting strategy work?</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> print_roi(df, fade<span class="op">=</span><span class="va">False</span>, threshold<span class="op">=</span><span class="dv">0</span>, mode<span class="op">=</span><span class="st">"both"</span>)</span>
@@ -467,7 +462,7 @@ ROI: -5.17%
 Test sum is -1360</code></pre>
 </div>
 </div>
-<div id="edcf0ab3" class="cell" data-execution_count="26">
+<div id="edcf0ab3" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How about employing the complete opposite strategy?</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>opposite <span class="op">=</span> print_roi(df, fade<span class="op">=</span><span class="va">True</span>, threshold<span class="op">=</span><span class="dv">0</span>, mode<span class="op">=</span><span class="st">"both"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -478,7 +473,7 @@ Total winnings/loss: -940
 ROI: -3.58%</code></pre>
 </div>
 </div>
-<div id="0953a659" class="cell" data-execution_count="27">
+<div id="0953a659" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gut-check to see what our ROI would be if we won 50% of our bets</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>f_f <span class="op">=</span> <span class="dv">100</span> <span class="op">+</span> <span class="op">-</span><span class="dv">110</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>investment <span class="op">=</span> <span class="dv">110</span><span class="op">*</span><span class="dv">2</span></span>
@@ -488,7 +483,7 @@ ROI: -3.58%</code></pre>
 <pre><code>ROI when winning 50% of bets: -4.55%</code></pre>
 </div>
 </div>
-<div id="b6088a15" class="cell" data-execution_count="28">
+<div id="b6088a15" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What about games where The Athletic has the favorite favored by more (2 points more, in this case)?</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> print_roi(df<span class="op">=</span>df, fade<span class="op">=</span><span class="va">False</span>, threshold<span class="op">=</span><span class="dv">2</span>, mode<span class="op">=</span><span class="st">"positive"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -498,7 +493,7 @@ Total winnings/loss: 540
 ROI: 27.27%</code></pre>
 </div>
 </div>
-<div id="b2882863" class="cell" data-execution_count="36">
+<div id="b2882863" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creeate a table for games where The Athletic has the favorite favored by more</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> []</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> diff <span class="kw">in</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>, <span class="fl">2.5</span>, <span class="dv">3</span>, <span class="fl">3.5</span>, <span class="dv">4</span>, <span class="fl">4.5</span>, <span class="dv">5</span>]:</span>
@@ -536,7 +531,7 @@ ROI: 27.27%</code></pre>
 <span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>    table_conversion<span class="op">=</span><span class="st">"chrome"</span></span>
 <span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ff2affb5" class="cell" data-execution_count="37">
+<div id="ff2affb5" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a table for games where The Athletic's spread had the favorite favored by less</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> []</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> diff <span class="kw">in</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>, <span class="fl">2.5</span>, <span class="dv">3</span>, <span class="fl">3.5</span>, <span class="dv">4</span>, <span class="fl">4.5</span>, <span class="dv">5</span>]:</span>
