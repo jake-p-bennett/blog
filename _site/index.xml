@@ -21,22 +21,22 @@
 
 
 
-<p>During the 2024-2025 NFL season, The Athletic maintained an NFL projections <a href="https://www.nytimes.com/athletic/5698572/2025/02/09/nfl-playoffs-projections-odds/?page=games&amp;week=1">webpage</a> that contained forecasts for each regular season and playoff game. Each projection included a forecasted points spread, and I was curious to see how these forecasts compared to the Las Vegas spreads and the actual game outcomes. I back-tested a simple betting strategy:</p>
+<p>During the 2024-2025 NFL season, The Athletic maintained an NFL projections <a href="https://www.nytimes.com/athletic/5698572/2025/02/09/nfl-playoffs-projections-odds/?page=games&amp;week=1">webpage</a> that contained forecasts for each regular season and playoff game. The projections included forecasted points spreads, and I was curious to see how these forecasts compared to the Las Vegas spreads and the actual game outcomes. I back-tested a simple betting strategy:</p>
 <ol type="1">
 <li><p>When The Athletic’s spread is greater than the Vegas spread, bet on the favorite.</p></li>
 <li><p>When The Athletic’s spread is less than the Vegas spread, bet on the underdog.</p></li>
 <li><p>If the spreads are the same, do not place a bet.</p></li>
 </ol>
 <p>The strategy only makes spread bets (i.e., no moneyline bets), and assumes -110 odds (wagering $110 to win $100).</p>
-<p>Of the 285 NFL games in the 2024-2025 season (regular season and playoffs), there were 239 games where The Athletic’s spread did not match the Vegas spread. On average, The Athletic’s spread differed from the actual game outcome by 9.75 points, while Vegas’ spread differed by 9.66 points. The median differences for The Athletic and Vegas were 7.5 points and 7 points, respectively. These are minimal differences, to be sure, but the Vegas lines were more accurate for the 2024-2025 season.</p>
+<p>Of the 285 NFL games in the 2024-2025 season (regular season and playoffs), there were 239 games where The Athletic’s spread did not match the Vegas spread. On average, The Athletic’s spreads differed from the actual game outcome by 9.75 points, while Vegas’s spreads differed by 9.66 points. The median differences for The Athletic and Vegas were 7.5 points and 7 points, respectively. These are minimal differences, to be sure, but the Vegas lines were more accurate for the 2024-2025 season.</p>
 <p>Unfortunately, the betting strategy described above does not give us an edge. Assuming bets of $110, employing the strategy would have lost $1,360 for a return of -5.17%. In fact, using the complete opposite strategy would have lost $940 for a return of -3.58%, which is better than the -4.55% we would expect from winning half of our bets.</p>
-<p>Then I wondered if The Athletic’s spread forecasts were better for a particular direction. That is to say, what if we bet only on games where The Athletic had the favorite favored by more? What if we bet only on games where The Athletic had the favorite favored by less?</p>
+<p>Then I wondered if The Athletic’s spread forecasts were better for a particular “direction” of spread difference. That is to say, what if we bet only on games where The Athletic had the favorite favored by more? What if we bet only on games where The Athletic had the favorite favored by less?</p>
 <p>It turns out that betting only on games where The Athletic had the favorite favored by more than Vegas would have been profitable to varying degrees, depending on what threshold of spread difference is used.</p>
 <p><img src="https://jake-p-bennett.github.io/blog/posts/NFL Betting/return_table.png" class="img-fluid" style="width:70.0%" data-fig_align="right"></p>
-<p>The same cannot be said for games where The Athletic has the favorite favored by less:</p>
+<p>The same cannot be said for games where The Athletic had the favorite favored by less:</p>
 <p><img src="https://jake-p-bennett.github.io/blog/posts/NFL Betting/return_table2.png" class="img-fluid" style="width:70.0%"></p>
 <p>The Athletic is still publishing weekly spread forecasts for the current 2025-2026 season (e.g., here is the link for <a href="https://www.nytimes.com/athletic/6684060/2025/10/02/nfl-week-5-projected-scores-model-predicts-point-spreads-totals/">Week 5</a>). I will be monitoring these projections to see if they fare better or worse than last year’s.</p>
-<p>If you are curious to see the code behind the analysis, check out the Github repository <a href="">here</a></p>
+<p>If you are curious to see more, you can download the <a href="https://github.com/jake-p-bennett/blog/blob/main/posts/NFL%20Betting/notebooks/nfl-notebook.ipynb">analysis workbook</a> and the <a href="https://github.com/jake-p-bennett/blog/tree/main/posts/NFL%20Betting/data">data</a> for this post.</p>
 
 
 
