@@ -4,14 +4,13 @@ project:
 website:
   description: "My blog"
   site-url: https://jake-p-bennett.github.io/blog # you must change this appropriately for RSS feeds to work properly
-  title: "blog"
+  title: "Jake's Blog"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/jake-p-bennett
+
 format:
   html:
     theme:

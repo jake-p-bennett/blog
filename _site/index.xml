@@ -5,7 +5,7 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>blog</title>
+<title>Jake&#39;s Blog</title>
 <link>https://jake-p-bennett.github.io/blog/</link>
 <atom:link href="https://jake-p-bennett.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>My blog</description>
