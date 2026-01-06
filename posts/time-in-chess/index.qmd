@@ -48,7 +48,7 @@ However, just a few moves later, black misses a fork that blunders the black que
 
 ![](final_position.png){width=80%}
 
-In another [blitz game](https://lichess.org/346b6LS1#68), white is up the exchange (i.e., has a rook in exchange for a knight) as well as two extra pawns, and is rated 399 points higher than white. On top of that, black has 11 seconds left on their clock. The model gives white a 95.6% chance of winning.
+In another [blitz game](https://lichess.org/346b6LS1#68), white is up the exchange (i.e., has a rook in exchange for a knight) as well as two extra pawns, and is rated 399 points higher than black. On top of that, black has 11 seconds left on their clock. The model gives white a 95.6% chance of winning.
 
 ![](sample_position2.png){width=80%}
 
