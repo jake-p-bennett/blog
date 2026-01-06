@@ -8,7 +8,7 @@
 <title>Jake&#39;s Blog</title>
 <link>https://jake-p-bennett.github.io/blog/</link>
 <atom:link href="https://jake-p-bennett.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
-<description>My blog</description>
+<description>Data science portfolio featuring projects in sports analytics, machine learning, and statistical modeling.</description>
 <generator>quarto-1.8.25</generator>
 <lastBuildDate>Mon, 05 Jan 2026 08:00:00 GMT</lastBuildDate>
 <item>
@@ -75,7 +75,7 @@
 <item>
   <title>Betting on The Athletic’s NFL Projections</title>
   <dc:creator>Jake Bennett</dc:creator>
-  <link>https://jake-p-bennett.github.io/blog/posts/NFL Betting/</link>
+  <link>https://jake-p-bennett.github.io/blog/posts/nfl-betting/</link>
   <description><![CDATA[ 
 
 
@@ -93,9 +93,9 @@
 <p>Unfortunately, the betting strategy described above does not give us an edge. Assuming bets of $110, employing the strategy would have lost $1,360 for a return of -5.17%. In fact, using the complete opposite strategy would have lost $940 for a return of -3.58%, which is better than the -4.55% we would expect from winning half of our bets.</p>
 <p>Then I wondered if The Athletic’s spread forecasts were better for a particular “direction” of spread difference. That is to say, what if we bet only on games where The Athletic had the favorite favored by more? What if we bet only on games where The Athletic had the favorite favored by less?</p>
 <p>It turns out that betting only on games where The Athletic had the favorite favored by more than Vegas would have been profitable to varying degrees, depending on what threshold of spread difference is used.</p>
-<p><img src="https://jake-p-bennett.github.io/blog/posts/NFL Betting/return_table.png" class="img-fluid" style="width:70.0%" data-fig_align="right"></p>
+<p><img src="https://jake-p-bennett.github.io/blog/posts/nfl-betting/return_table.png" class="img-fluid" style="width:70.0%" data-fig_align="right"></p>
 <p>The same cannot be said for games where The Athletic had the favorite favored by less:</p>
-<p><img src="https://jake-p-bennett.github.io/blog/posts/NFL Betting/return_table2.png" class="img-fluid" style="width:70.0%"></p>
+<p><img src="https://jake-p-bennett.github.io/blog/posts/nfl-betting/return_table2.png" class="img-fluid" style="width:70.0%"></p>
 <p>The Athletic is still publishing weekly spread forecasts for the current 2025-2026 season (e.g., here is the link for <a href="https://www.nytimes.com/athletic/6684060/2025/10/02/nfl-week-5-projected-scores-model-predicts-point-spreads-totals/">Week 5</a>). I will be monitoring these projections to see if they fare better or worse than last year’s.</p>
 <p>If you are curious to see more, you can download the <a href="https://github.com/jake-p-bennett/blog/blob/main/posts/NFL%20Betting/notebooks/nfl-notebook.ipynb">analysis workbook</a> and the <a href="https://github.com/jake-p-bennett/blog/tree/main/posts/NFL%20Betting/data">data</a> for this post.</p>
 
@@ -104,9 +104,9 @@
  ]]></description>
   <category>NFL</category>
   <category>sports</category>
-  <guid>https://jake-p-bennett.github.io/blog/posts/NFL Betting/</guid>
+  <guid>https://jake-p-bennett.github.io/blog/posts/nfl-betting/</guid>
   <pubDate>Sat, 04 Oct 2025 07:00:00 GMT</pubDate>
-  <media:content url="https://jake-p-bennett.github.io/blog/posts/NFL Betting/allen.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://jake-p-bennett.github.io/blog/posts/nfl-betting/allen.jpeg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
