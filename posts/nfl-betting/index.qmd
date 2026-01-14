@@ -5,7 +5,7 @@ excerpt: False
 author: "Jake Bennett"
 format: html
 editor: visual
-categories: [NFL, sports]
+categories: [football, sports]
 date: 2025-10-04
 image: "allen.jpeg"
 ---
@@ -28,11 +28,11 @@ Then I wondered if The Athletic's spread forecasts were better for a particular 
 
 It turns out that betting only on games where The Athletic had the favorite favored by more than Vegas would have been profitable to varying degrees, depending on what threshold of spread difference is used.
 
-![](return_table.png){fig_align="right" width=70%}
+![](return_table.png){fig_align="right" width="70%"}
 
 The same cannot be said for games where The Athletic had the favorite favored by less:
 
-![](return_table2.png){width=70%}
+![](return_table2.png){width="70%"}
 
 The Athletic is still publishing weekly spread forecasts for the current 2025-2026 season (e.g., here is the link for [Week 5](https://www.nytimes.com/athletic/6684060/2025/10/02/nfl-week-5-projected-scores-model-predicts-point-spreads-totals/)). I will be monitoring these projections to see if they fare better or worse than last year's.
 

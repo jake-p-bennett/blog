@@ -1,0 +1,77 @@
+---
+title: "In Basketball, Attention Is Not All You Need"
+subtitle: "Attempting to predict NBA outcomes using attention mechanisms"
+excerpt: False
+author: "Jake Bennett"
+format: html
+editor: visual
+categories: [basketball, sports]
+date: 2026-1-13
+image: "jokic.jpg"
+---
+
+The [attention mechanism](https://arxiv.org/abs/1706.03762) revolutionalized the fields of deep learning and natural language processing by introducing a way to model the interactions between words in a nuanced way. I was curious to see if this type of interaction modeling could translate to the chemistry between NBA players. Intuitively it feels like this might work. Nikola Jokic is clearly a dominant player on his own, but surrounding him with lethal shooters and skilled perimiter defenders seems like a better option than pairing him with a ball-dominant defensive liability (like Trae Young). I thought it might also be possible to model lineup matchups in this way, with certain defensive lineups able to stymie certain types of offenses more easily.
+
+In searching for prior work on this topic, I found the [NBA2Vec paper](https://arxiv.org/abs/2302.13386), which showed that player embeddings could capture positional and stylistic similarities. Their approach averaged embeddings across lineups (which I will refer to as the baseline model), losing pairwise interaction information.
+
+I hypothesized that attention mechanisms could do better by:
+- Using self-attention to model within-team synergies (e.g., pick-and-roll partners)
+- Using cross-attention to model offensive vs. defensive matchups
+
+## The Data
+
+I used a dataset of play-by-play NBA data from [Kaggle](https://www.kaggle.com/datasets/schmadam97/nba-playbyplay-data-20182019) that contains data from the 2015-2022 seasons (only partial data from the 2022 season). The data contained around 4.4 million plays across 9,456 games. To eliminate some noise, I only looked at players with over 100 possessions played, of whom there were 1,181. I wanted the model to predict point differential for the home team.
+
+## The Models
+
+To start, I mimicked the NBA2Vec methodology[^1], creating a model that learns player embeddings from scratch to predict point differential. Then, I created an attention-based model that uses self-attention for players on the same team, cross-attention for players on different teams, and then sends a possession-weighted average of lineups for each team through a multilayer perceptron to come up with a prediction. Both of these models had an R-squared of around 0, showing that the neural net cannot learn from these random embeddings without some kind of pretraining. To address this issue, I used vectors containing player stats (offensive rating, defensive rating, net rating, possessions, and games played) as embeddings, and tested my original approach both at the player level and at the team level. Attention did not help in this case either, actually making the R-squared worse in each case.
+
+I then decided to try a hybrid approach, using player stats as embeddings but having the model learn residuals. Unfortunately, this method also failed, giving essentially the same R-squared values for both the baseline model and the attention model. Even when adding two more features, player points per 100 possessions[^2] and rebounds per 100 possessions, the attention model failed to outperform the baseline model, with both R-squared values refusing to go any higher than 0.2
+
+| Model | Parameters | Test R² | Test RMSE | Win Accuracy |
+|-------|------------|---------|-----------|--------------|
+| EmbeddingsBaseline | 83K | 0.001 | 26.7 | 54.9% |
+| EmbeddingsAttention | 176K | 0.000 | 26.7 | 56.0% |
+| StatsBaseline (team-level) | 5K | 0.202 | 12.7 | 66.5% |
+| StatsAttention (team-level) | 42K | 0.193 | 12.7 | 66.2% |
+| StatsPlayerBaseline | 9K | 0.201 | 12.7 | 65.0% |
+| StatsPlayerAttention | 17K | 0.191 | 12.8 | 66.1% |
+| HybridBaseline | 46K | 0.203 | 12.7 | 65.8% |
+| HybridAttention | 55K | 0.199 | 12.7 | 65.6% |
+| HybridBaseline (rich) | 46K | 0.203 | 12.7 | 66.2% |
+| HybridAttention (rich) | 55K | 0.200 | 12.7 | 66.7% |
+
+As a sanity check, I compared the models' results against XGBoost with different feature representations. I used three different feature configurations: 
+
+1. Averaged: Weighted mean of player stats per team (14 features)
+
+2. Summary: Mean, std, min, max of player stats per team (56 features)
+
+3. Concatenated: Top-10 players' stats concatenated (160 features)
+
+
+While the first two configurations performed around the same as the other models that I tried (R-squared around 0.2), the concatenation method gave an R-squared of 0.29. This makes some sense. Running XGBoost on these concatenated vectors allows the model to deal with non-linear relationships, which the averaging-based neural net can't do, without having to learn tens of thousands of parameters, which the attention-based neural net has to do.
+
+| Model | Features | Test R² | Win Accuracy |
+|-------|----------|---------|--------------|
+| XGBoost (averaged) | 14 | 0.195 | 65.3% |
+| XGBoost (summary) | 56 | 0.196 | 65.2% |
+| **XGBoost (concat)** | 160 | **0.289** | 65.2% |
+
+I didn't want to give up just yet, and I hypothesized that the game-level averaging by minutes played for each lineup could be obscuring lineup specific effects. So I ran a separate experiment at the lineup level using the same hybrid approach described above. Unfortunately this also didn't work, with the models having basically no predictive power whatsoever. This is probably because this lineup approach does not account for strength of opponents at all.
+
+| Model | Test R² | 
+|-------|---------|
+| LineupBaseline | 0.0225 | 
+| LineupAttention | 0.0200 | 
+
+## Interpretation
+
+It's hard to conclude that lineup chemistry doesn't exist in the NBA. But this approach didn't detect it. It's possible that the efficiency stats I used don't capture the right signal or that the sample size was too small. It's also possible that some other kind of attention mechanism would perform better. It could be that synergy is real but too small to be detected when drowned out by individual player quality and noise. I think it's probably some combination of all of these.
+
+Taking a step back, all of the models I tested had a win accuracy of around 65-67% (except for the models that had to learn embeddings from scratch). This means that while the point differential predictions weren't the most accurate, they were directionally pretty sound. Indeed, as of January 13, 2026, NBA favorites have a win rate of [64.5%](https://www.covers.com/sport/basketball/nba/league-trends/seasontodate), indicating that the models do have some predictive value. Without considering injuries, rest days, or home court advantage, the models I tested basically matched (they slightly exceeded, but it's hard to say that's not just noise) the Vegas oddsmakers' predictions of who will win games, which I think is a pretty good result.
+
+While I couldn't get the attention mechanism to model NBA player interactions, it was still fun to play around with these models and learn something new. In the future I'd like to do more work on statistical learning related to NBA stats.
+
+[^1]: Though they predicted play outcomes, e.g., made two-point basket, missed three-point attempt, etc. 
+[^2]: Note that this differs from offensive rating which is the player's team's points per 100 possessions when they are on the court.
