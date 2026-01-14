@@ -71,7 +71,11 @@ It's hard to conclude that lineup chemistry doesn't exist in the NBA. But this a
 
 Taking a step back, all of the models I tested had a win accuracy of around 65-67% (except for the models that had to learn embeddings from scratch). This means that while the point differential predictions weren't the most accurate, they were directionally pretty sound. Indeed, as of January 13, 2026, NBA favorites have a win rate of [64.5%](https://www.covers.com/sport/basketball/nba/league-trends/seasontodate), indicating that the models do have some predictive value. Without considering injuries, rest days, or home court advantage, the models I tested basically matched (they slightly exceeded, but it's hard to say that's not just noise) the Vegas oddsmakers' predictions of who will win games, which I think is a pretty good result.
 
+The code for this project, including scripts for downloading play-by-play data, extracting stats, and training models, is available on [GitHub](https://github.com/jake-p-bennett/nba-lineup-attention).
+
 While I couldn't get the attention mechanism to model NBA player interactions, it was still fun to play around with these models and learn something new. In the future I'd like to do more work on statistical learning related to NBA stats.
+
+
 
 [^1]: Though they predicted play outcomes, e.g., made two-point basket, missed three-point attempt, etc. 
 [^2]: Note that this differs from offensive rating which is the player's team's points per 100 possessions when they are on the court.
