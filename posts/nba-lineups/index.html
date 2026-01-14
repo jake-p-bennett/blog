@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jake Bennett">
+<meta name="dcterms.date" content="2026-01-13">
 
-<title>Jake’s Blog</title>
+<title>In Basketball, Attention Is Not All You Need – Jake’s Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,79 +70,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-date','listing-image','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Jake's Blog" href="index.xml" data-external="1"></head>
-
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Jake’s Blog</span>
     </a>
   </div>
@@ -153,7 +95,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -176,146 +118,216 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Jake’s Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">In Basketball, Attention Is Not All You Need</h1>
+            <p class="subtitle lead">Attempting to predict NBA outcomes using attention mechanisms</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">basketball</div>
+                <div class="quarto-category">sports</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jake Bennett </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 13, 2026</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="YmFza2V0YmFsbA==">basketball <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2hlc3M=">chess <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Zm9vdGJhbGw=">football <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c3BvcnRz">sports <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>The <a href="https://arxiv.org/abs/1706.03762">attention mechanism</a> revolutionalized the fields of deep learning and natural language processing by introducing a way to model the interactions between words in a nuanced way. I was curious to see if this type of interaction modeling could translate to the chemistry between NBA players. Intuitively it feels like this might work. Nikola Jokic is clearly a dominant player on his own, but surrounding him with lethal shooters and skilled perimiter defenders seems like a better option than pairing him with a ball-dominant defensive liability (like Trae Young). I thought it might also be possible to model lineup matchups in this way, with certain defensive lineups able to stymie certain types of offenses more easily.</p>
+<p>In searching for prior work on this topic, I found the <a href="https://arxiv.org/abs/2302.13386">NBA2Vec paper</a>, which showed that player embeddings could capture positional and stylistic similarities. Their approach averaged embeddings across lineups (which I will refer to as the baseline model), losing pairwise interaction information.</p>
+<p>I hypothesized that attention mechanisms could do better by: - Using self-attention to model within-team synergies (e.g., pick-and-roll partners) - Using cross-attention to model offensive vs.&nbsp;defensive matchups</p>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<p>I used a dataset of play-by-play NBA data from <a href="https://www.kaggle.com/datasets/schmadam97/nba-playbyplay-data-20182019">Kaggle</a> that contains data from the 2015-2022 seasons (only partial data from the 2022 season). The data contained around 4.4 million plays across 9,456 games. To eliminate some noise, I only looked at players with over 100 possessions played, of whom there were 1,181. I wanted the model to predict point differential for the home team.</p>
+</section>
+<section id="the-models" class="level2">
+<h2 class="anchored" data-anchor-id="the-models">The Models</h2>
+<p>To start, I mimicked the NBA2Vec methodology<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, creating a model that learns player embeddings from scratch to predict point differential. Then, I created an attention-based model that uses self-attention for players on the same team, cross-attention for players on different teams, and then sends a possession-weighted average of lineups for each team through a multilayer perceptron to come up with a prediction. Both of these models had an R-squared of around 0, showing that the neural net cannot learn from these random embeddings without some kind of pretraining. To address this issue, I used vectors containing player stats (offensive rating, defensive rating, net rating, possessions, and games played) as embeddings, and tested my original approach both at the player level and at the team level. Attention did not help in this case either, actually making the R-squared worse in each case.</p>
+<p>I then decided to try a hybrid approach, using player stats as embeddings but having the model learn residuals. Unfortunately, this method also failed, giving essentially the same R-squared values for both the baseline model and the attention model. Even when adding two more features, player points per 100 possessions<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and rebounds per 100 possessions, the attention model failed to outperform the baseline model, with both R-squared values refusing to go any higher than 0.2</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Parameters</th>
+<th>Test R²</th>
+<th>Test RMSE</th>
+<th>Win Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>EmbeddingsBaseline</td>
+<td>83K</td>
+<td>0.001</td>
+<td>26.7</td>
+<td>54.9%</td>
+</tr>
+<tr class="even">
+<td>EmbeddingsAttention</td>
+<td>176K</td>
+<td>0.000</td>
+<td>26.7</td>
+<td>56.0%</td>
+</tr>
+<tr class="odd">
+<td>StatsBaseline (team-level)</td>
+<td>5K</td>
+<td>0.202</td>
+<td>12.7</td>
+<td>66.5%</td>
+</tr>
+<tr class="even">
+<td>StatsAttention (team-level)</td>
+<td>42K</td>
+<td>0.193</td>
+<td>12.7</td>
+<td>66.2%</td>
+</tr>
+<tr class="odd">
+<td>StatsPlayerBaseline</td>
+<td>9K</td>
+<td>0.201</td>
+<td>12.7</td>
+<td>65.0%</td>
+</tr>
+<tr class="even">
+<td>StatsPlayerAttention</td>
+<td>17K</td>
+<td>0.191</td>
+<td>12.8</td>
+<td>66.1%</td>
+</tr>
+<tr class="odd">
+<td>HybridBaseline</td>
+<td>46K</td>
+<td>0.203</td>
+<td>12.7</td>
+<td>65.8%</td>
+</tr>
+<tr class="even">
+<td>HybridAttention</td>
+<td>55K</td>
+<td>0.199</td>
+<td>12.7</td>
+<td>65.6%</td>
+</tr>
+<tr class="odd">
+<td>HybridBaseline (rich)</td>
+<td>46K</td>
+<td>0.203</td>
+<td>12.7</td>
+<td>66.2%</td>
+</tr>
+<tr class="even">
+<td>HybridAttention (rich)</td>
+<td>55K</td>
+<td>0.200</td>
+<td>12.7</td>
+<td>66.7%</td>
+</tr>
+</tbody>
+</table>
+<p>As a sanity check, I compared the models’ results against XGBoost with different feature representations. I used three different feature configurations:</p>
+<ol type="1">
+<li><p>Averaged: Weighted mean of player stats per team (14 features)</p></li>
+<li><p>Summary: Mean, std, min, max of player stats per team (56 features)</p></li>
+<li><p>Concatenated: Top-10 players’ stats concatenated (160 features)</p></li>
+</ol>
+<p>While the first two configurations performed around the same as the other models that I tried (R-squared around 0.2), the concatenation method gave an R-squared of 0.29. This makes some sense. Running XGBoost on these concatenated vectors allows the model to deal with non-linear relationships, which the averaging-based neural net can’t do, without having to learn tens of thousands of parameters, which the attention-based neural net has to do.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Features</th>
+<th>Test R²</th>
+<th>Win Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>XGBoost (averaged)</td>
+<td>14</td>
+<td>0.195</td>
+<td>65.3%</td>
+</tr>
+<tr class="even">
+<td>XGBoost (summary)</td>
+<td>56</td>
+<td>0.196</td>
+<td>65.2%</td>
+</tr>
+<tr class="odd">
+<td><strong>XGBoost (concat)</strong></td>
+<td>160</td>
+<td><strong>0.289</strong></td>
+<td>65.2%</td>
+</tr>
+</tbody>
+</table>
+<p>I didn’t want to give up just yet, and I hypothesized that the game-level averaging by minutes played for each lineup could be obscuring lineup specific effects. So I ran a separate experiment at the lineup level using the same hybrid approach described above. Unfortunately this also didn’t work, with the models having basically no predictive power whatsoever. This is probably because this lineup approach does not account for strength of opponents at all.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Test R²</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LineupBaseline</td>
+<td>0.0225</td>
+</tr>
+<tr class="even">
+<td>LineupAttention</td>
+<td>0.0200</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<p>It’s hard to conclude that lineup chemistry doesn’t exist in the NBA. But this approach didn’t detect it. It’s possible that the efficiency stats I used don’t capture the right signal or that the sample size was too small. It’s also possible that some other kind of attention mechanism would perform better. It could be that synergy is real but too small to be detected when drowned out by individual player quality and noise. I think it’s probably some combination of all of these.</p>
+<p>Taking a step back, all of the models I tested had a win accuracy of around 65-67% (except for the models that had to learn embeddings from scratch). This means that while the point differential predictions weren’t the most accurate, they were directionally pretty sound. Indeed, as of January 13, 2026, NBA favorites have a win rate of <a href="https://www.covers.com/sport/basketball/nba/league-trends/seasontodate">64.5%</a>, indicating that the models do have some predictive value. Without considering injuries, rest days, or home court advantage, the models I tested basically matched (they slightly exceeded, but it’s hard to say that’s not just noise) the Vegas oddsmakers’ predictions of who will win games, which I think is a pretty good result.</p>
+<p>While I couldn’t get the attention mechanism to model NBA player interactions, it was still fun to play around with these models and learn something new. In the future I’d like to do more work on statistical learning related to NBA stats.</p>
 
 
+</section>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1759623792786">
-<div class="thumbnail"><a href="./posts/nfl-betting/notebooks/nfl-notebook.html" class="no-external">
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/nfl-betting/notebooks/nfl-notebook.html" class="no-external"></a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/nfl-betting/notebooks/nfl-notebook.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/nfl-betting/notebooks/nfl-notebook.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="YmFza2V0YmFsbCUyQ3Nwb3J0cw==" data-listing-date-sort="1768291200000" data-listing-file-modified-sort="1768366320656" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1096">
-<div class="thumbnail"><a href="./posts/nba-lineups/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/nba-lineups/jokic.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/nba-lineups/index.html" class="no-external">In Basketball, Attention Is Not All You Need</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/nba-lineups/index.html" class="no-external">Attempting to predict NBA outcomes using attention mechanisms</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('YmFza2V0YmFsbA=='); return false;">basketball</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3BvcnRz'); return false;">sports</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/nba-lineups/index.html" class="no-external">
-<div class="listing-date">
-Jan 13, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Y2hlc3M=" data-listing-date-sort="1767600000000" data-listing-file-modified-sort="1767679773294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1386">
-<div class="thumbnail"><a href="./posts/time-in-chess/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/time-in-chess/clock.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/time-in-chess/index.html" class="no-external">Time is Money — Even in Chess</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/time-in-chess/index.html" class="no-external">How does time impact the win probability of blitz chess games across different skill levels?</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y2hlc3M='); return false;">chess</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/time-in-chess/index.html" class="no-external">
-<div class="listing-date">
-Jan 5, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Zm9vdGJhbGwlMkNzcG9ydHM=" data-listing-date-sort="1759561200000" data-listing-file-modified-sort="1768366285075" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="409">
-<div class="thumbnail"><a href="./posts/nfl-betting/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/nfl-betting/allen.jpeg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/nfl-betting/index.html" class="no-external">Betting on The Athletic’s NFL Projections</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/nfl-betting/index.html" class="no-external">Did The Athletic have an edge on Vegas during the 2024 NFL season?</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Zm9vdGJhbGw='); return false;">football</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3BvcnRz'); return false;">sports</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/nfl-betting/index.html" class="no-external">
-<div class="listing-date">
-Oct 4, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<ol>
+<li id="fn1"><p>Though they predicted play outcomes, e.g., made two-point basket, missed three-point attempt, etc.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Note that this differs from offensive rating which is the player’s team’s points per 100 possessions when they are on the court.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
