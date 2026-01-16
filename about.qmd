@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: DarkRook.webp
+image: jake.jpg
 about:
   template: jolla
   # links:
@@ -16,4 +16,4 @@ about:
 
 ---
 
-Writing about sports analytics, chess, and anything else that interests me.
+Data science blog where I write about sports analytics, chess, and anything else that interests me.
