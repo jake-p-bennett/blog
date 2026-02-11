@@ -10,7 +10,53 @@
 <atom:link href="https://jake-p-bennett.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Data science portfolio featuring projects in sports analytics, machine learning, and statistical modeling.</description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Tue, 13 Jan 2026 08:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 11 Feb 2026 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>Jarvis, Who’s the Best Scorer in the NBA?</title>
+  <dc:creator>Jake Bennett</dc:creator>
+  <link>https://jake-p-bennett.github.io/blog/posts/points-plus/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>While I have integrated some AI tools into my everyday life, I have always found the hype around <a href="https://en.wikipedia.org/wiki/Vibe_coding">vibe coding</a> to be overblown. I have used LLMs to generate code, but whenever I’ve tried to build a whole app or website, it’s failed. For example, a month ago I tried to build a simple NFL playoff bracket that my friends and I could fill out – nothing too complicated, just a bracket set up with certain scoring rules and a leaderboard to see where people stand. I tried to have Anthropic’s <a href="https://www.anthropic.com/news/claude-opus-4-5">Claude Opus 4.5</a> build the website, but it never got off the ground. The clicking mechanisms were broken, the bracket formatting was terrible, and Claude decided to make the scoring variable cumulative – any time you clicked on a team, your score would increase indefinitely, with no way to undo the additions to the score. After trying to prompt Claude to edit the site for an hour or so, I gave up, reaffirmed in my diagnosis that the vibe coding hype was far from reality, even for simple applications.</p>
+<p>A few days ago while scrolling through Twitter (I still refuse to call it X), I came across an essay titled <a href="https://x.com/mattshumer_/status/2021256989876109403">Something Big is Happening</a> by Matt Shumer. Generally I don’t read Twitter essays since I find they tend to contain a lot of <a href="https://en.wikipedia.org/wiki/AI_slop">slop</a>, but the algorithm kept insisting on putting this one on my feed. I finally relented and gave it a read after <a href="https://en.wikipedia.org/wiki/Matthew_Yglesias">Matt Yglesias</a> <a href="https://x.com/mattyglesias/status/2021354578407772287">tweeted</a> about it, since Yglesias is far enough removed from the Twitter-tech-echo-chamber.</p>
+<p>The essay describes how much frontier models like OpenAI’s ChatGPT and Anthropic’s Claude have advanced over the past year, and even over the past week. Shumer goes on to argue that everyone employed in a type of ‘knowledge work’ (e.g.&nbsp;software engineering, legal work, financial analysis) is at risk of being displaced by AI, and gives recommendations for what to do to shield yourself from this upheaval. I was less interested in Shumer’s macroeconomic predictions<sup>1</sup> and more interested in one of his claims:</p>
+<blockquote class="blockquote">
+<p>Let me give you an example so you can understand what this actually looks like in practice. I’ll tell the AI: “I want to build this app. Here’s what it should do, here’s roughly what it should look like. Figure out the user flow, the design, all of it.” And it does. It writes tens of thousands of lines of code. Then, and this is the part that would have been unthinkable a year ago, it opens the app itself. It clicks through the buttons. It tests the features. It uses the app the way a person would. If it doesn’t like how something looks or feels, it goes back and changes it, on its own. It iterates, like a developer would, fixing and refining until it’s satisfied.</p>
+</blockquote>
+<p>As I mentioned, this was far from my experience with LLMs in the past, even as recently as around a month ago. I was curious to see if models really have gotten that much better since then.</p>
+<p>To test this, I decided to see if Anthropic’s newly released <a href="https://www.anthropic.com/news/claude-opus-4-6">Opus 4.6</a> model could build a simple NBA dashboard website that I had been thinking about. My idea was to create a stat called ‘Points+’, which mimics baseball stats like <a href="https://www.mlb.com/glossary/advanced-stats/on-base-plus-slugging-plus">OPS+</a> and <a href="https://www.mlb.com/glossary/advanced-stats/weighted-runs-created-plus">wRC+</a> that account for strength of opponent and scale to the league’s average (centered at 100).</p>
+<p>I created a folder on my computer called <code>nba-dashboard/</code>, gave <a href="https://code.claude.com/docs/en/overview">Claude Code</a> access to the folder, and then created a <code>CLAUDE.md</code> file with the following instructions:</p>
+<blockquote class="blockquote">
+<p>I want you to build an NBA dashboard that tracks a new individual stat called ‘Points+’ for NBA players in the current (2025-2026) NBA season. Points+ is conceptually similar to OPS+ or wRC+ in baseball – it measures points per game compared to league average, adjusting for opponent difficulty (and maybe some other things). So 100 would be an average scorer, and 120 would be a scorer who is 20% better than league average.</p>
+<p>The deliverable of this is going to be a website that shows the top 50 players in terms of Points+, and it also will have a search option to look up specific players. Maybe there will be some cool visualizations on there too, if you’re up for it.</p>
+<p>You have complete creative freedom in how you build this website. You’ll have to figure out how to obtain the data, how to calculate the stat for each player, and how to build the webpage.</p>
+<p>Eventually I’d like this website to automatically download data for each game (maybe the morning of every day) since the NBA season is currently going on. But right now let’s focus on getting the site up and running with an ‘as-of’ date of 2/10/26.</p>
+<p>If you have any clarifying questions, you will ask me. You are to test things out as you go. The first time you show me a prototype of the website, I want it to work. I want to be able to click around in it without things breaking.</p>
+</blockquote>
+<p>Claude worked for 8 minutes, and to my surprise, presented me with a working prototype. It had done everything I asked for: it obtained the data, defined requirements for which players qualify, synthesized the stats into Points+, and created a pretty aesthetically pleasing website. There were a few cosmetic things that I asked it to change (some text was too dark against the background, main summary table was too wide) and a few small technical changes I had it make (the histogram originally did not include the top players, sorting by Points+ showed that ties were handled randomly), but overall it got the website working on the first try. I even had it walk me through how to deploy it to a domain name that I purchased. I wanted to make the site dynamically update with new data every day, and it built that into the site too. The whole process took around 90 minutes.</p>
+<p>I’m not sure anyone knows what the future of AI-integrated work looks like. But it does seem that these models are now at a point where they can spin up a personal project with loosely defined requirements extremely quickly. Of course this project is simple – there is no user login, no security concerns, no complicated database management. Even so, I was impressed by the model’s ability to get a working site in front of me so quickly, especially given how miserably my previous attempts at vibe coding had failed.</p>
+<p>You can check out the live site at <a href="https://nbapointsplus.com">nbapointsplus.com</a>, and if you’re curious to see the technical approach that Claude took, check out the GitHub <a href="https://github.com/jake-p-bennett/nba-dashboard">repo</a>.</p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>And as always, it’s worth thinking about if Shumer has anything to gain from hyping AI. His <a href="https://shumer.dev/about">website</a> makes clear that he is the founder of an AI company and invests in other AI companies.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>basketball</category>
+  <category>sports</category>
+  <category>ai</category>
+  <guid>https://jake-p-bennett.github.io/blog/posts/points-plus/</guid>
+  <pubDate>Wed, 11 Feb 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://jake-p-bennett.github.io/blog/posts/points-plus/jarvis.webp" medium="image" type="image/webp"/>
+</item>
 <item>
   <title>In Basketball, Attention Is Not All You Need</title>
   <dc:creator>Jake Bennett</dc:creator>

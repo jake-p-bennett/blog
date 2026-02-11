@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jake Bennett">
+<meta name="dcterms.date" content="2026-02-11">
 
-<title>Jake’s Blog</title>
+<title>Jarvis, Who’s the Best Scorer in the NBA? – Jake's Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,79 +70,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-date','listing-image','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Jake's Blog" href="index.xml" data-external="1"></head>
-
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Jake’s Blog</span>
     </a>
   </div>
@@ -153,7 +95,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -176,177 +118,78 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Jake’s Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Jarvis, Who’s the Best Scorer in the NBA?</h1>
+            <p class="subtitle lead">Quickly building an NBA dashboard with Claude Code</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">basketball</div>
+                <div class="quarto-category">sports</div>
+                <div class="quarto-category">ai</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jake Bennett </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 11, 2026</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="YWk=">ai <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmFza2V0YmFsbA==">basketball <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Y2hlc3M=">chess <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Zm9vdGJhbGw=">football <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c3BvcnRz">sports <span class="quarto-category-count">(3)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>While I have integrated some AI tools into my everyday life, I have always found the hype around <a href="https://en.wikipedia.org/wiki/Vibe_coding">vibe coding</a> to be overblown. I have used LLMs to generate code, but whenever I’ve tried to build a whole app or website, it’s failed. For example, a month ago I tried to build a simple NFL playoff bracket that my friends and I could fill out – nothing too complicated, just a bracket set up with certain scoring rules and a leaderboard to see where people stand. I tried to have Anthropic’s <a href="https://www.anthropic.com/news/claude-opus-4-5">Claude Opus 4.5</a> build the website, but it never got off the ground. The clicking mechanisms were broken, the bracket formatting was terrible, and Claude decided to make the scoring variable cumulative – any time you clicked on a team, your score would increase indefinitely, with no way to undo the additions to the score. After trying to prompt Claude to edit the site for an hour or so, I gave up, reaffirmed in my diagnosis that the vibe coding hype was far from reality, even for simple applications.</p>
+<p>A few days ago while scrolling through Twitter (I still refuse to call it X), I came across an essay titled <a href="https://x.com/mattshumer_/status/2021256989876109403">Something Big is Happening</a> by Matt Shumer. Generally I don’t read Twitter essays since I find they tend to contain a lot of <a href="https://en.wikipedia.org/wiki/AI_slop">slop</a>, but the algorithm kept insisting on putting this one on my feed. I finally relented and gave it a read after <a href="https://en.wikipedia.org/wiki/Matthew_Yglesias">Matt Yglesias</a> <a href="https://x.com/mattyglesias/status/2021354578407772287">tweeted</a> about it, since Yglesias is far enough removed from the Twitter-tech-echo-chamber.</p>
+<p>The essay describes how much frontier models like OpenAI’s ChatGPT and Anthropic’s Claude have advanced over the past year, and even over the past week. Shumer goes on to argue that everyone employed in a type of ‘knowledge work’ (e.g.&nbsp;software engineering, legal work, financial analysis) is at risk of being displaced by AI, and gives recommendations for what to do to shield yourself from this upheaval. I was less interested in Shumer’s macroeconomic predictions<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and more interested in one of his claims:</p>
+<blockquote class="blockquote">
+<p>Let me give you an example so you can understand what this actually looks like in practice. I’ll tell the AI: “I want to build this app. Here’s what it should do, here’s roughly what it should look like. Figure out the user flow, the design, all of it.” And it does. It writes tens of thousands of lines of code. Then, and this is the part that would have been unthinkable a year ago, it opens the app itself. It clicks through the buttons. It tests the features. It uses the app the way a person would. If it doesn’t like how something looks or feels, it goes back and changes it, on its own. It iterates, like a developer would, fixing and refining until it’s satisfied.</p>
+</blockquote>
+<p>As I mentioned, this was far from my experience with LLMs in the past, even as recently as around a month ago. I was curious to see if models really have gotten that much better since then.</p>
+<p>To test this, I decided to see if Anthropic’s newly released <a href="https://www.anthropic.com/news/claude-opus-4-6">Opus 4.6</a> model could build a simple NBA dashboard website that I had been thinking about. My idea was to create a stat called ‘Points+’, which mimics baseball stats like <a href="https://www.mlb.com/glossary/advanced-stats/on-base-plus-slugging-plus">OPS+</a> and <a href="https://www.mlb.com/glossary/advanced-stats/weighted-runs-created-plus">wRC+</a> that account for strength of opponent and scale to the league’s average (centered at 100).</p>
+<p>I created a folder on my computer called <code>nba-dashboard/</code>, gave <a href="https://code.claude.com/docs/en/overview">Claude Code</a> access to the folder, and then created a <code>CLAUDE.md</code> file with the following instructions:</p>
+<blockquote class="blockquote">
+<p>I want you to build an NBA dashboard that tracks a new individual stat called ‘Points+’ for NBA players in the current (2025-2026) NBA season. Points+ is conceptually similar to OPS+ or wRC+ in baseball – it measures points per game compared to league average, adjusting for opponent difficulty (and maybe some other things). So 100 would be an average scorer, and 120 would be a scorer who is 20% better than league average.</p>
+<p>The deliverable of this is going to be a website that shows the top 50 players in terms of Points+, and it also will have a search option to look up specific players. Maybe there will be some cool visualizations on there too, if you’re up for it.</p>
+<p>You have complete creative freedom in how you build this website. You’ll have to figure out how to obtain the data, how to calculate the stat for each player, and how to build the webpage.</p>
+<p>Eventually I’d like this website to automatically download data for each game (maybe the morning of every day) since the NBA season is currently going on. But right now let’s focus on getting the site up and running with an ‘as-of’ date of 2/10/26.</p>
+<p>If you have any clarifying questions, you will ask me. You are to test things out as you go. The first time you show me a prototype of the website, I want it to work. I want to be able to click around in it without things breaking.</p>
+</blockquote>
+<p>Claude worked for 8 minutes, and to my surprise, presented me with a working prototype. It had done everything I asked for: it obtained the data, defined requirements for which players qualify, synthesized the stats into Points+, and created a pretty aesthetically pleasing website. There were a few cosmetic things that I asked it to change (some text was too dark against the background, main summary table was too wide) and a few small technical changes I had it make (the histogram originally did not include the top players, sorting by Points+ showed that ties were handled randomly), but overall it got the website working on the first try. I even had it walk me through how to deploy it to a domain name that I purchased. I wanted to make the site dynamically update with new data every day, and it built that into the site too. The whole process took around 90 minutes.</p>
+<p>I’m not sure anyone knows what the future of AI-integrated work looks like. But it does seem that these models are now at a point where they can spin up a personal project with loosely defined requirements extremely quickly. Of course this project is simple – there is no user login, no security concerns, no complicated database management. Even so, I was impressed by the model’s ability to get a working site in front of me so quickly, especially given how miserably my previous attempts at vibe coding had failed.</p>
+<p>You can check out the live site at <a href="https://nbapointsplus.com">nbapointsplus.com</a>, and if you’re curious to see the technical approach that Claude took, check out the GitHub <a href="https://github.com/jake-p-bennett/nba-dashboard">repo</a>.</p>
 
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1759623792786">
-<div class="thumbnail"><a href="./posts/nfl-betting/notebooks/nfl-notebook.html" class="no-external">
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/nfl-betting/notebooks/nfl-notebook.html" class="no-external"></a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/nfl-betting/notebooks/nfl-notebook.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/nfl-betting/notebooks/nfl-notebook.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="YmFza2V0YmFsbCUyQ3Nwb3J0cyUyQ2Fp" data-listing-date-sort="1770796800000" data-listing-file-modified-sort="1770839494295" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1140">
-<div class="thumbnail"><a href="./posts/points-plus/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/points-plus/jarvis.webp" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/points-plus/index.html" class="no-external">Jarvis, Who’s the Best Scorer in the NBA?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/points-plus/index.html" class="no-external">Quickly building an NBA dashboard with Claude Code</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('YmFza2V0YmFsbA=='); return false;">basketball</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3BvcnRz'); return false;">sports</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YWk='); return false;">ai</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/points-plus/index.html" class="no-external">
-<div class="listing-date">
-Feb 11, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="YmFza2V0YmFsbCUyQ3Nwb3J0cw==" data-listing-date-sort="1768291200000" data-listing-file-modified-sort="1768420249333" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1115">
-<div class="thumbnail"><a href="./posts/nba-lineups/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/nba-lineups/jokic.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/nba-lineups/index.html" class="no-external">In Basketball, Attention Is Not All You Need</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/nba-lineups/index.html" class="no-external">Attempting to predict NBA outcomes using attention mechanisms</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('YmFza2V0YmFsbA=='); return false;">basketball</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3BvcnRz'); return false;">sports</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/nba-lineups/index.html" class="no-external">
-<div class="listing-date">
-Jan 13, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Y2hlc3M=" data-listing-date-sort="1767600000000" data-listing-file-modified-sort="1767679773294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1386">
-<div class="thumbnail"><a href="./posts/time-in-chess/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/time-in-chess/clock.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/time-in-chess/index.html" class="no-external">Time is Money — Even in Chess</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/time-in-chess/index.html" class="no-external">How does time impact the win probability of blitz chess games across different skill levels?</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y2hlc3M='); return false;">chess</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/time-in-chess/index.html" class="no-external">
-<div class="listing-date">
-Jan 5, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Zm9vdGJhbGwlMkNzcG9ydHM=" data-listing-date-sort="1759561200000" data-listing-file-modified-sort="1768366285075" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="409">
-<div class="thumbnail"><a href="./posts/nfl-betting/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/nfl-betting/allen.jpeg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/nfl-betting/index.html" class="no-external">Betting on The Athletic’s NFL Projections</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/nfl-betting/index.html" class="no-external">Did The Athletic have an edge on Vegas during the 2024 NFL season?</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Zm9vdGJhbGw='); return false;">football</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3BvcnRz'); return false;">sports</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/nfl-betting/index.html" class="no-external">
-<div class="listing-date">
-Oct 4, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<ol>
+<li id="fn1"><p>And as always, it’s worth thinking about if Shumer has anything to gain from hyping AI. His <a href="https://shumer.dev/about">website</a> makes clear that he is the founder of an AI company and invests in other AI companies.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
