@@ -16,4 +16,4 @@ about:
 
 ---
 
-Data science blog where I write about sports analytics, chess, and anything else that interests me.
+*Playing with Data* is a data science blog where I write about sports analytics, chess, and anything else that interests me.

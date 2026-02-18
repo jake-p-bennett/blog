@@ -4,7 +4,7 @@ project:
 website:
   description: "Data science portfolio featuring projects in sports analytics, machine learning, and statistical modeling."
   site-url: https://jake-p-bennett.github.io/blog # you must change this appropriately for RSS feeds to work properly
-  title: "Jake's Blog"
+  title: "Playing with Data"
   navbar:
     right:
       - about.qmd

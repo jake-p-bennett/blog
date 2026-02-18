@@ -1,5 +1,6 @@
 ---
-title: "Jake's Blog"
+title: "Playing with Data"
+subtitle: 'A data science blog by Jake Bennett'
 listing:
   contents: posts
   feed: true
